@@ -34,9 +34,9 @@
 
 4. 📝 Создайте в файле `Program.cs` меню с взаимодействиями.
 
-5. 📝 Создайте файл `StudentFunctions.cs` для функций.
+5. 📝 Напишите функцию `Main()` с меню ввода.
 
-6. 📝 Напишите функции `ShowAll()`, `FindById(int id)` и `Add(string firstName, string lastName, int age, int? groupId)`.
+6. 📝 Напишите функции `ShowAllStudents()`, `FindStudentByName(string name)`.
 
 
 </td>
