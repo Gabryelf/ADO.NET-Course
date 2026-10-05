@@ -25,18 +25,17 @@
 
 2. 📝 Таблицы которые у вас должны быть `Students`, `Subjects`, `Grades`, `Teachers`, `Groups`.
 
-3. 📝 У вас должно быть расширение `Microsoft.Data.SqlClient` и скрипты `Program.cs` и `StudentFunctions.cs` .
+3. 📝 У вас должно быть расширение `Microsoft.Data.SqlClient` и скрипты `Program.cs`.
 
 </td>
 
 <td width="50%" valign="top">
 
 
-4. 📝 Создайте метод для получения группы студента `List<(int Id, string Name)> GetGroups()`.
+4. 📝 Создайте метод для создания группы `AddGroup(string name_group)`.
 
-5. 📝 Создайте метод для редактирования студента `Edit(int id, string firstName, string lastName, int age, int? groupId)`.
+5. 📝 Создайте метод для добавлениястудента `AddStudent(string first_name, string last_name, string age, string group_id)`.
 
-6. 📝 Создайте метод для удаления студента `Delete(int id)`.
 
 
 </td>
