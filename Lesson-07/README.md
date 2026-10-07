@@ -7,7 +7,7 @@
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](#)
 
- **🔹 Урок 7 — ADO.NET модификации приложения**
+ **🔹 ADO.NET модификация приложения согласно слоистой архитектуре**
 
 </div>
 
@@ -21,11 +21,11 @@
 
 <b>
 
-1. 📝 Работаем с базой данных `CollegeDB`. 
+1. 📁 Работаем с базой данных `CollegeDB`. 
 
-2. 📝 Таблицы которые у вас должны быть `Students`, `Subjects`, `Grades`, `Teachers`, `Groups`.
+2. 📁 Таблицы которые у вас должны быть `Students`, `Subjects`, `Grades`, `Teachers`, `Groups`.
 
-3. 📝 У вас должно быть расширение `Microsoft.Data.SqlClient`, скрипты `Program.cs` и `Models.cs`.
+3. 📁 У вас должно быть расширение `Microsoft.Data.SqlClient`, скрипты `Program.cs`, `StudentRepository.cs` и `Models.cs`.
 
 </b>
 
@@ -35,9 +35,11 @@
 
 <b>
 
-4. 📝 Создайте метод для создания группы `AddGroup(string name_group)`.
+4. 📝 Создайте класс модели `public class Student()` с `ovveride` методом.
 
-5. 📝 Создайте метод для добавления студента `AddStudent(string first_name, string last_name, string age, string group_id)`.
+5. 📝 Создайте класс репозитория `public StudentRepository(string connectionString)`.
+
+6. 📝 Заполнить оба класса функционалом согласно паттерну `Repository`.
 
 </b>
 
