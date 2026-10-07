@@ -21,9 +21,9 @@
 
 <b>
 
-1. 📁 Работаем с базой данных `CollegeDB`. 
+1. 📁 У вас должна быть база данных `CollegeDB` и таблицы `Students`, `Subjects`, `Grades`, `Teachers`, `Groups`. 
 
-2. 📁 Таблицы которые у вас должны быть `Students`, `Subjects`, `Grades`, `Teachers`, `Groups`.
+2. 📁 В вашем проекте сейчас должны быть папки со скриптами `Models` и `Data`.
 
 3. 📁 У вас должно быть расширение `Microsoft.Data.SqlClient`, скрипты `Program.cs`, `StudentRepository.cs`, `Student.cs`, `GroupRepository.cs` и `Group.cs`.
 
