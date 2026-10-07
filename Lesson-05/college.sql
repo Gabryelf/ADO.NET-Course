@@ -1,4 +1,4 @@
-USE Colegge_DB;
+USE College_DB;
 GO
 
 -- 1. Группы
