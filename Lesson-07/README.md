@@ -25,7 +25,7 @@
 
 2. 📁 Таблицы которые у вас должны быть `Students`, `Subjects`, `Grades`, `Teachers`, `Groups`.
 
-3. 📁 У вас должно быть расширение `Microsoft.Data.SqlClient`, скрипты `Program.cs`, `StudentRepository.cs` и `Models.cs`.
+3. 📁 У вас должно быть расширение `Microsoft.Data.SqlClient`, скрипты `Program.cs`, `StudentRepository.cs` и `Student.cs`.
 
 </b>
 
