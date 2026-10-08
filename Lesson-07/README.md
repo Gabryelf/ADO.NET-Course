@@ -35,7 +35,7 @@
 
 <b>
 
-4. 📝 Создайте класс модели `public class Student()` с `ovveride` методом.
+4. 📝 Создайте класс модели `public class Student()` с `override` методом.
 
 5. 📝 Создайте класс репозитория `public StudentRepository(string connectionString)`.
 
