@@ -5,9 +5,9 @@
 [![.NET](https://img.shields.io/badge/.NET-6.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/dotnet/csharp/)
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
-[![License](https://img.shields.io/badge/ADO.NET-Drapper-green?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/ADO.NET-Dapper-green?style=for-the-badge)](#)
 
- **🔹 ADO.NET оптимизация кода с Drapper**
+ **🔹 ADO.NET оптимизация кода с Dapper**
 
 </div>
 
@@ -35,13 +35,11 @@
 
 <b>
 
-4. 📝 Установите расширение `Drapper` в менеджере пакетов `NuGet`.
+4. 📝 Установите расширение `Dapper` в менеджере пакетов `NuGet`.
 
 5. 📝 Перепишите методы класса `StudentRepository()` используя `Query<T>` и `QueryFirstOrDefault<T>`.
 
 6. 📝 Перепишите методы класса `GroupRepository()` используя `Query<T>` и `QueryFirstOrDefault<T>`.
-
-7. 📝 Используйте в любом из этих классов `QuerySingle<int>` для получения последнего id при создании строки.
 
 </b>
 
