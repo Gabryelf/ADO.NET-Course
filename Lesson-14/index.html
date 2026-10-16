@@ -25,40 +25,5 @@
         </thead>
         <tbody></tbody>
     </table>
-
-    <script>
-        async function loadStudents() {
-            const errorEl = document.getElementById('error');
-            const tbody = document.querySelector('#studentsTable tbody');
-            errorEl.textContent = '';
-            tbody.innerHTML = '';
-
-            try {
-                const res = await fetch('/api/students');
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-
-                const students = await res.json();
-                if (students.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="4">Список пуст</td></tr>';
-                    return;
-                }
-
-                for (const s of students) {
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td>${s.studentId}</td>
-                        <td>${s.firstName}</td>
-                        <td>${s.lastName}</td>
-                        <td>${s.age}</td>`;
-                    tbody.appendChild(tr);
-                }
-            } catch (e) {
-                errorEl.textContent = 'Ошибка загрузки: ' + e.message;
-            }
-        }
-
-        // Загружаем при открытии страницы
-        loadStudents();
-    </script>
 </body>
 </html>
