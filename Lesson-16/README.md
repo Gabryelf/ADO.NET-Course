@@ -2,14 +2,14 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f766e,100:14b8a6&height=180&section=header&text=ADO.NET%20Course&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=15%20урок%20&descAlignY=58&descSize=18" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f766e,100:14b8a6&height=180&section=header&text=ADO.NET%20Course&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=16%20урок%20&descAlignY=58&descSize=18" width="100%"/>
 
 [![.NET](https://img.shields.io/badge/.NET-6.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/dotnet/csharp/)
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
 [![License](https://img.shields.io/badge/ADO.NET-Dapper-green?style=for-the-badge)](#)
 
- **🔹 ASP.NET - получение данных и обработка маршрутов**
+ **🔹 ASP.NET - создание данных и обработка маршрутов**
 
 </div>
 
@@ -41,7 +41,7 @@
 
 5. 📝 Создаем обработку маршрутов - используем `index.html` из `wwwroot` и внедряем `javascript`.
 
-6. 📝 Нужно создать метод для обработки маршрута `students/all` и показать все данные в представлении.
+6. 📝 Нужно создать метод для обработки маршрута `student/id` и показать все данные в представлении.
 
 </b>
 
