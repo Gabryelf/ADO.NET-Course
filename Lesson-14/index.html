@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Журнал студентов</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        h1 { color: #2c3e50; }
+        table { border-collapse: collapse; background: white; box-shadow: 0 2px 6px rgba(0,0,0,.1); }
+        th, td { padding: 10px 20px; border-bottom: 1px solid #eee; text-align: left; }
+        th { background: #2c3e50; color: white; }
+        tr:hover { background: #f0f7ff; }
+        #error { color: #c0392b; }
+    </style>
+</head>
+<body>
+    <h1>Список студентов</h1>
+    <button onclick="loadStudents()">Обновить</button>
+    <p id="error"></p>
+    <table id="studentsTable">
+        <thead>
+            <tr>
+                <th>ID</th><th>Имя</th><th>Фамилия</th><th>Возраст</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        async function loadStudents() {
+            const errorEl = document.getElementById('error');
+            const tbody = document.querySelector('#studentsTable tbody');
+            errorEl.textContent = '';
+            tbody.innerHTML = '';
+
+            try {
+                const res = await fetch('/api/students');
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+
+                const students = await res.json();
+                if (students.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="4">Список пуст</td></tr>';
+                    return;
+                }
+
+                for (const s of students) {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${s.studentId}</td>
+                        <td>${s.firstName}</td>
+                        <td>${s.lastName}</td>
+                        <td>${s.age}</td>`;
+                    tbody.appendChild(tr);
+                }
+            } catch (e) {
+                errorEl.textContent = 'Ошибка загрузки: ' + e.message;
+            }
+        }
+
+        // Загружаем при открытии страницы
+        loadStudents();
+    </script>
+</body>
+</html>
