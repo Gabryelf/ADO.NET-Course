@@ -72,9 +72,10 @@ async function addStudent() {
 
 async function updateStudent() {
 
-    const id = document.getElementById("idStudentUpdate").value
+    const id = Number(document.getElementById("idStudentUpdate").value)
     ClearPage();
     let student = {
+        id: id,
         firstName: document.getElementById("firstNameUpdate").value,
         lastName: document.getElementById("lastNameUpdate").value,
         age: Number(document.getElementById("ageUpdate").value),
@@ -86,11 +87,17 @@ async function updateStudent() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(student)
     });
+}
 
-    number = await res.json();
+async function deleteStudent() {
+    const id = Number(document.getElementById("idStudentDelete").value)
+    ClearPage();
+    const res = await fetch(`/students/${id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(id)
+    });
 
-    if (res.ok) Console.Log(`${number} SaveOk`);
-    else Console.Log("NotOk");
 }
 
 function ClearPage() {
