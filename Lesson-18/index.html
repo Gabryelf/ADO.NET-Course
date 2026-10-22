@@ -63,7 +63,7 @@
             <p>Изменить студента</p>
             <form>
                 <label>
-                    Имя студента
+                    ID
                     <input id="idStudentUpdate" type="number" placeholder="введите id студента" />
                 </label>
                 <label>
@@ -85,6 +85,16 @@
             </form>
 
             <button onclick="updateStudent()"> Сохранить + </button>
+        </section>
+
+        <section>
+            <form>
+                <label>
+                    Удалить студента по ID
+                    <input id="idStudentDelete" type="number" placeholder="введите id студента" />
+                </label>
+                <button onclick="deleteStudent()"> Удалить + </button>
+            </form>
         </section>
     </main>
 
