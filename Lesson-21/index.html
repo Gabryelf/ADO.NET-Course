@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Колледж</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <button onclick="loadStudents()">Студенты</button>
+        <button onclick="loadGroups()">Группы</button>
+    </header>
+
+    <main>
+        <table id="studentsTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Возраст</th>
+                </tr>
+            </thead>
+            <tbody id="studentBody"></tbody>
+        </table>
+
+        <table id="groupsTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Группа</th>
+                </tr>
+            </thead>
+            <tbody id="groupBody"></tbody>
+        </table>
+
+        <section>
+            <p>Создать группу</p>
+            <form>
+                <label>
+                    Имя группы
+                    <input id="nameGroup" type="text" placeholder="РПО-1" />
+                </label>
+                
+            </form>
+
+            <button onclick="addGroup()"> Добавить + группу </button>
+        </section>
+
+        <section>
+            <p>Создать студента</p>
+            <form>
+                <label>
+                    Имя студента
+                    <input id="firstNameStudent" type="text" placeholder="Иван" />
+                </label>
+                <label>
+                    Фамилия студента
+                    <input id="lastNameStudent" type="text" placeholder="Иванов" />
+                </label>
+                <label>
+                    Возраст студента
+                    <input id="ageStudent" type="number" placeholder="18" />
+                </label>
+                <label>
+                    Группа студента
+                    <input id="groupId" type="number" placeholder="1" />
+                </label>
+            </form>
+
+            <button onclick="addStudent()"> Добавить + </button>
+        </section>
+
+        <section>
+            <p>Изменить студента</p>
+            <form>
+                <label>
+                    ID
+                    <input id="idStudentUpdate" type="number" placeholder="введите id студента" />
+                </label>
+                <label>
+                    Имя студента
+                    <input id="firstNameUpdate" type="text" placeholder="Иван" />
+                </label>
+                <label>
+                    Фамилия студента
+                    <input id="lastNameUpdate" type="text" placeholder="Иванов" />
+                </label>
+                <label>
+                    Возраст студента
+                    <input id="ageUpdate" type="number" placeholder="18" />
+                </label>
+                <label>
+                    Группа студента
+                    <input id="groupIdUpdate" type="number" placeholder="1" />
+                </label>
+            </form>
+
+            <button onclick="updateStudent()"> Сохранить + </button>
+        </section>
+
+        <section>
+            <form>
+                <label>
+                    Удалить студента по ID
+                    <input id="idStudentDelete" type="number" placeholder="введите id студента" />
+                </label>
+                <button onclick="deleteStudent()"> Удалить + </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p id="gr"></p>
+    </footer>
+
+    <script src="js/routes.js"></script>
+</body>
+</html>
