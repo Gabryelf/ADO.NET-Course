@@ -61,8 +61,23 @@ namespace College_DB.Data
             {
                 string sql = "UPDATE Students SET FirstName=@firstName, LastName=@lastName, " +
                   "Age=@age, GroupId=@groupId WHERE StudentId=@id";
-                connection.Execute(sql, student);
+                student.StudentId = id;
+                Console.WriteLine(student.StudentId);
+
+                connection.Execute(sql, new { id, student.FirstName, student.LastName, student.Age, student.GroupId });
             }
+
+        }
+
+        public void DeleteStudent(int id)
+        {
+            Console.WriteLine(id);
+            using (var connection = new SqlConnection(_conn_str))
+            {
+                var sql = "DELETE FROM Students WHERE StudentId=@id";
+                connection.Execute(sql, new { id });
+            }
+            
         }
     }
 
