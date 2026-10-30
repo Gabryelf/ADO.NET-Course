@@ -9,7 +9,6 @@ builder.Services.AddDbContext<CollegeDBContext>(options =>
     
 builder.Services.AddRazorPages();
 
-
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -32,8 +31,9 @@ app.MapGet("groups/all", async (CollegeDBContext db) => {
     return Results.Ok(await db.Groups.AsNoTracking().ToListAsync());
 });
 
-app.MapGet("group/{id}", (string id) => {
-    return Results.Ok();
+app.MapGet("group/{id}", async (int id, CollegeDBContext db) => {
+    var student = await db.Students.AsNoTracking().SingleOrDefaultAsync(s => s.StudentId == id);
+    return Results.Ok(student);
 });
 
 app.MapPost("/students/add", async(Student student, CollegeDBContext db) =>
@@ -49,31 +49,42 @@ app.MapPost("/groups/add", async (Group group, CollegeDBContext db) =>
     db.Groups.Add(group);
     await db.SaveChangesAsync();
     return Results.Created($"/groups/add",
-                           new { studentId = group.GroupId });
+                           new { groupId = group.GroupId });
 });
 
-app.MapPut("/students/{id:int}", (int id, Student student) =>
-{ 
-    student.StudentId = id;
-
-    return Results.NoContent();
-});
-
-app.MapDelete("/students/{id:int}", (int id) =>
+app.MapPut("/students/{id:int}", async (int id, Student student, CollegeDBContext db) =>
 {
+    var existing = await db.Students.FindAsync(id);
+
+    if (existing != null)
+    {
+        existing.FirstName = student.FirstName;
+        existing.LastName = student.LastName;
+        existing.Age = student.Age;
+        existing.GroupId = student.GroupId;
+    }
+
+    await db.SaveChangesAsync();
+
     return Results.NoContent();
 });
 
-
+app.MapDelete("/students/{id:int}", async(int id, CollegeDBContext db) =>
+{
+    var existing = await db.Students.FindAsync(id);
+    if (existing != null)
+    {
+        db.Remove(existing);
+        await db.SaveChangesAsync();
+    }
+    return Results.NoContent();
+});
 
 app.UseHttpsRedirection();
 app.UseDefaultFiles();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapRazorPages();
 
 app.Run();
